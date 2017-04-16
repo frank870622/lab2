@@ -15,10 +15,12 @@ class A{
                         EB = 1/(1+pow(10,(RA-RB)/400));
                         RA = RA + K*(win-EA);
                         RB = RB + K*((1-win)-EB);
+			RA = floor(RA+0.5);
+			RB = floor(RB+0.5);
                         ans1 = (int)RA;
                         ans2 = (int)RB;
                         ofstream outfile("file.out",ios::app);
-                        outfile << ans1 << " " << ans2 << endl;
+                        outfile << ans1 << "\t" << ans2 << endl;
         }
         private:
         int ans1,ans2;
